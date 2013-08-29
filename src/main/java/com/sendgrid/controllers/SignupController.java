@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sendgrid.forms.Signup;
+import com.github.scottmotte.sendgrid.SendGrid;
+
 
 @Controller
 public class SignupController {
@@ -21,10 +23,19 @@ public class SignupController {
 
   @RequestMapping(value = "/signup", method = RequestMethod.POST)
   public String postSignup(@ModelAttribute Signup signup, Model model) {
-
     System.out.println(signup.getEmail());
+    
+    SendGrid sendgrid = new SendGrid("username", "password");
 
-    model.addAttribute("message", "Successfully saved signup");
+    sendgrid.addTo(signup.getEmail());
+    sendgrid.setFrom("scott.motte@sendgrid.com");
+    sendgrid.setSubject("Welcome!");
+    sendgrid.setText("You have successfully signed up!");
+    String response = sendgrid.send();
+
+    System.out.println(response);
+
+    model.addAttribute("message", "Successfully signed up!");
 
     return "index";
   }
