@@ -25,7 +25,9 @@ public class SignupController {
   public String postSignup(@ModelAttribute Signup signup, Model model) {
     System.out.println(signup.getEmail());
     
-    SendGrid sendgrid = new SendGrid("username", "password");
+    String username   = System.getenv("SENDGRID_USERNAME");
+    String password   = System.getenv("SENDGRID_PASSWORD");
+    SendGrid sendgrid = new SendGrid(username, password);
 
     sendgrid.addTo(signup.getEmail());
     sendgrid.setFrom("scott.motte@sendgrid.com");
