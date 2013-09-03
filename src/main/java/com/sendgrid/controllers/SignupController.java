@@ -33,6 +33,7 @@ public class SignupController {
     sendgrid.setHtml("<h3>Thanks for signing up. Here is a picture of Spring to start you off.</h3><p><img src='http://www.lolomgwtfbbq.com/wp-content/uploads/2012/08/oh-waterfall.jpeg'></p>");
 
     String response = sendgrid.send();
+    System.out.println(response);
 
     return "signup";
   }
