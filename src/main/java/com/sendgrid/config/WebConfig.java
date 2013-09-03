@@ -13,7 +13,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
  
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-    registry.addResourceHandler("/**").addResourceLocations("classpath:/assets/");
+    registry.addResourceHandler("/assets/**").addResourceLocations("/assets/");
   }
 
   @Bean
