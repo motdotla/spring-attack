@@ -43,9 +43,6 @@ Note that they are in there.
 cf env spring-attack
 ```
 
-
-
-
 ## Production
 
 ### Deploy to Cloud Foundry
@@ -61,8 +58,17 @@ cf push --path build/libs/spring-attack.war
 
 ### Usage
 
+1) Set the `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` environment variables.
+
+```bash
+export SENDGRID_USERNAME=your_username
+export SENDGRID_PASSWORD=your_password
+```
+
+2) Then build and serve the war file.
+
 ```bash
 gradle jettyRunWar
 ```
 
-Visit [http://localhost:8080](http://localhost:8080).
+3) Visit [http://localhost:8080](http://localhost:8080).
