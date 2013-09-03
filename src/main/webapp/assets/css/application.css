@@ -1,21 +1,23 @@
-.dollar-signup {
+.signup {
   text-align: center;
   font-size: 18px;
   width: 240px;
   padding: 0;
   margin: 0 auto;
 }
-.dollar-signup input {
+.signup input {
   text-align: center;
   width: 98%;
   padding: 10px 0 10px 0;
 }
-.dollar-signup button {
+.signup button {
+  width: 238px;
 }
 
 body {
-    font-family: sans-serif;
-    color: #777;
+  font-family: sans-serif;
+  color: rgba(255,255,255, 0.8);
+  background: rgb(49,58,70);
 }
 
 
@@ -38,8 +40,8 @@ body {
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: bold;
-    color: rgb(75, 75, 75);
+  font-weight: bold;
+  color: rgba(255,255,255, 1);
 }
 h3 {
     font-size: 1.25em;
@@ -100,11 +102,11 @@ dd {
 .header {
      min-height: 80px;
      margin: 0;
-     color: #333;
+     color: #fff;
      padding: 1em;
      text-align: center;
-     border-bottom: 1px solid #eee;
-     background: #fff;
+     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     margin-bottom: 30px;
  }
     .header h1 {
         margin: 0.2em 0;
@@ -114,7 +116,7 @@ dd {
      .header h2 {
         font-weight: 300;
         margin: 0;
-        color: #ccc;
+        color: rgba(255,255,255, 0.8);
     }
 
 aside {
@@ -138,6 +140,7 @@ aside {
     margin: 0 auto;
     width: 70%;
     margin-bottom:50px;
+    text-align: center;
 }
     .content p {
         line-height: 1.6em;

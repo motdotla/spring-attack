@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.sendgrid.forms.Signup;
 import com.github.scottmotte.sendgrid.SendGrid;
 
-
 @Controller
 public class SignupController {
 
   @RequestMapping("/")
   public String index(Model model) {
     model.addAttribute("signup", new Signup());
-    model.addAttribute("message", "Hello World!");
 
     return "index";
   }
@@ -31,15 +29,11 @@ public class SignupController {
 
     sendgrid.addTo(signup.getEmail());
     sendgrid.setFrom("scott.motte@sendgrid.com");
-    sendgrid.setSubject("Welcome!");
-    sendgrid.setText("You have successfully signed up!");
+    sendgrid.setSubject("[Spring Attack] Welcome");
+    sendgrid.setHtml("<h3>Thanks for signing up. Here is a picture of Spring to start you off.</h3><p><img src='http://www.lolomgwtfbbq.com/wp-content/uploads/2012/08/oh-waterfall.jpeg'></p>");
+
     String response = sendgrid.send();
 
-    System.out.println(response);
-
-    model.addAttribute("message", "Successfully signed up!");
-
-    return "index";
+    return "signup";
   }
-
 }

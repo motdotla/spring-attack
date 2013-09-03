@@ -1,6 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,19 +18,15 @@
 
     <div class="pure-u-2-3">
       <div class="header">
-        <h1>${message}</h1>
-        <h1>Spring Attack</h1>
-        <h2>attack attack attack! ack ack ack!</h2>
+        <h1>Spring Attack!</h1>
+        <h4>Receive pictures of Spring in your email.</h4>
       </div>
 
       <div class="content">
-        <p>
-          &nbsp;
-        </p>
-        <form:form class="pure-form-stacked dollar-signup" method="post" action="/signup" modelAttribute="signup">
+        <form:form class="pure-form-stacked signup" method="post" action="/signup" modelAttribute="signup">
           <form:input path="email" id="email" type="email" placeholder="Email" />
 
-          <button type="submit" class="pure-button pure-button-primary">Sign me up!</button>
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
         </form:form>
       </div>
     </div>
