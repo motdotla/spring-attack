@@ -27,6 +27,7 @@ cf bind-service
 Next, show how you can see the VCAP_Environment variables.
 
 ```bash
+cf restart spring-attack
 cf files spring-attack logs/env.log
 ```
 
