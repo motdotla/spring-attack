@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sendgrid.forms.Signup;
-import com.github.scottmotte.sendgrid.SendGrid;
+import com.github.sendgrid.SendGrid;
 
 @Controller
 public class SignupController {
