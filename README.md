@@ -26,26 +26,6 @@ cf create-service sendgrid
 cf bind-service
 ```
 
-Next, show how you can see the VCAP_Environment variables.
-
-```bash
-cf restart spring-attack
-cf files spring-attack logs/env.log
-```
-
-Note the username and password in the VCAP_SERVICES and then lets set those as environment variables.
-
-```bash
-cf set-env spring-attack SENDGRID_USERNAME username
-cf set-env spring-attack SENDGRID_PASSWORD password
-```
-
-Note that they are in there.
-
-```bash
-cf env spring-attack
-```
-
 ## Production
 
 ### Deploy to Cloud Foundry
@@ -61,17 +41,8 @@ cf push --path build/libs/spring-attack.war
 
 ### Usage
 
-1) Set the `SENDGRID_USERNAME` and `SENDGRID_PASSWORD` environment variables.
-
-```bash
-export SENDGRID_USERNAME=your_username
-export SENDGRID_PASSWORD=your_password
-```
-
-2) Then build and serve the war file.
-
 ```bash
 gradle jettyRunWar
 ```
 
-3) Visit [http://localhost:8080](http://localhost:8080).
+Visit [http://localhost:8080](http://localhost:8080).
